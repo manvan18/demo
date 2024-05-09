@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: local
+  h2:
+    console.enabled: true
+  jpa:
+    database: H2
+    openInView: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        jdbc:
+          batch_size: 25
+          batch_versioned_data: true
+          time_zone: UTC
+        order_inserts: true
+        order_updates: true
+        show_sql: false
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:coin_desk_db?useUnicode=yes&characterEncoding=utf-8
+    username: root
+    password: root
+
+flyway:
+  enabled: true
+  baseline-on-migrate: true
+  baseline-version: 1.0.0
+  locations: db/migration/
