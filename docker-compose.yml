@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  demo-coin-desk:
+    image: demo-coin-desk
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    ports:
+      - '8080:8080'
