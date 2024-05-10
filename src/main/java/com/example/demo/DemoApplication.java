@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableFeignClients("com.example.demo.connector")
-@ImportAutoConfiguration({FeignAutoConfiguration.class})
 @EnableScheduling
 public class DemoApplication {
 

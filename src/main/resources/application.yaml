@@ -21,9 +21,34 @@ spring:
     url: jdbc:h2:mem:coin_desk_db?useUnicode=yes&characterEncoding=utf-8
     username: root
     password: root
-
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            loggerLevel: FULL
 flyway:
   enabled: true
   baseline-on-migrate: true
   baseline-version: 1.0.0
   locations: db/migration/
+
+logging:
+  level:
+    org:
+      zalando:
+        logbook: TRACE
+    com:
+      example:
+        demo:
+          connector:
+            CoinDeskConnector: DEBUG
+
+
+logbook:
+  exclude:
+    - "/swagger-ui/**"
+    - "/actuator/**"
+    - "/v3/api-docs/**"
+    - "/swagger-resources/**"
+    - "/favicon.ico"

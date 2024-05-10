@@ -6,11 +6,13 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Data;
+import lombok.ToString;
 import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
 @Jacksonized
+@ToString
 public class Time {
 
   @JsonDeserialize(using = LocalDateTimeDeserializer.class)

@@ -5,11 +5,13 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
+import lombok.ToString;
 import lombok.extern.jackson.Jacksonized;
 
 @Data
 @Builder
 @Jacksonized
+@ToString
 public class CurrencyInfo {
   private String code;
   private String symbol;
